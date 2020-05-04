@@ -271,20 +271,42 @@ body{
   grid-template-columns: 1fr ;
   grid-template-rows: 5fr 1fr 5fr;
   grid-template-areas:
-    "workTimerBox"
+    "workTimerFlexBox"
     "clockMenuBox"
-    "breakTimerBox";
+    "breakTimerFlexBox";
   grid-column-gap: 3px;
   grid-row-gap: 3px;
   justify-items: stretch;
   align-items: stretch;
+  justify-content: center;
 }
-#workTimerBox{
-  grid-area: workTimerBox;
-  background-color: darkblue;
+#workTimerFlexBox{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: darkblue;
+}
+#breakTimerFlexBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkblue;
+}
+#workTimerGridBox{
+  grid-area: workTimerGridBox;
+  height: 40vh;
+  width: 40vw;
+  margin: auto 0;
+  display: grid;
+  grid-template-columns: .75fr .25fr  ;
+  grid-template-rows: .3fr .3fr;
+  grid-template-areas:
+  "workTimerText workTimerIncrease"
+  "workTimerText workTimerDecrease";
+  align-items: center;
+  align-content: center;
+  justify-items: stretch;
+  justify-content: center;
 }
 #clockMenuBox{
   grid-area: clockMenuBox;
@@ -297,22 +319,70 @@ body{
   margin: auto 0;
   padding: 0 15px 0 15px;
 }
-#breakTimerBox{
+#breakTimerGridBox{
   grid-area: breakTimerBox;
-  background-color: darkblue;
-  display: flex;
-  justify-content: center;
+  height: 40vh;
+  width: 40vw;
+  margin: auto 0;
+  display: grid;
+  grid-template-columns: .75fr .25fr  ;
+  grid-template-rows: .3fr .3fr;
+  grid-template-areas:
+    "breakTimerText breakTimerIncrease"
+    "breakTimerText breakTimerDecrease";
   align-items: center;
+  align-content: center;
+  justify-items: stretch;
+  justify-content: center;
+}
+#workTimerText{
+  grid-area: workTimerText;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+}
+#workTimerIncrease{
+  grid-area: workTimerIncrease;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+}
+#workTimerDecrease{
+  grid-area: workTimerDecrease;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+}
+#breakTimerText{
+  grid-area: breakTimerText;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+}
+#breakTimerIncrease{
+  grid-area: breakTimerIncrease;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+}
+#breakTimerDecrease{
+  grid-area: breakTimerDecrease;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
 }
 #pageTitle{
   color: black;
-  font-size: 80px;
+  font-size: 60px;
 }
 .actionButton{
   color: #2e2e2e;
   font-size: 50px;
   user-select: none;
-
+}
+.timerOptions{
+  color: black;
+  font-size: 50px;
 }
 .timerText{
   font-size: 150px;
@@ -320,6 +390,6 @@ body{
 }
 
 
-.actionButton:hover{
+.actionButton:hover, .timerOptions:hover{
   color: darkgoldenrod;
 }
